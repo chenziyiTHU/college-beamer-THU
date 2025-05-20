@@ -69,13 +69,6 @@
     \renewcommand{\backgroundPath}{src/SAES/background.png}
 }
 
-\DeclareOption{zafu}{
-    \renewcommand{\maincolorRGB}{0, 133, 75}
-    \renewcommand{\colorlogoPath}{src/ZAFU/color-logo.png}
-    \renewcommand{\translogoPath}{src/ZAFU/trans-logo.png}
-    \renewcommand{\backgroundPath}{src/ZAFU/background.png}
-}
-
 \DeclareOption{red}{
     \renewcommand{\maincolorRGB}{128, 57, 61}
     \renewcommand{\colorlogoPath}{src/Red/color-logo.png}
@@ -114,14 +107,10 @@
         \renewcommand{\@makelogo}{translogo}
         \setbeamercolor{normal text}{fg=white, bg=maincolor}
         \setbeamercolor{structure}{fg=white}
-        \setbeamercolor{block title}{fg=maincolor, bg=sintefgrey}
-        \setbeamercolor{block body}{fg=maincolor, bg=sintefgrey}
     }{
         \renewcommand{\@makelogo}{colorlogo}
         \setbeamercolor{normal text}{fg=darkgray, bg=white}
         \setbeamercolor{structure}{fg=maincolor}
-        \setbeamercolor{block title}{fg=airforceblue, bg=morelightgray}
-        \setbeamercolor{block body}{fg=darkgray, bg=morelightgray}
     }
 }
 \themecolor{white} % default: white theme
@@ -143,9 +132,6 @@
 
 \setbeamerfont{frametitle}{series=\bfseries}
 \setbeamerfont{framesubtitle}{series=\mdseries, size=\small}
-\setbeamerfont{block title}{series=\centering, size=\small}
-\setbeamerfont{block body}{size=\scriptsize}
-
 \setbeamerfont{footline}{size=\scriptsize}
 
 % no navigation symbols
@@ -165,19 +151,19 @@
     \ifstrempty{#1}{
         \renewcommand{\@footlinepayoff}{}
         \setbeamercolor{footline}{bg=}
-        \setbeamercolor{block title}{fg=white, bg=maincolor}
-        \setbeamercolor{block body}{fg=white, bg=maincolor}
     }{
         \renewcommand{\@footlinepayoff}{\@SINTEFmotto}
         \setbeamercolor{footline}{fg=white, bg=#1}
-        \setbeamercolor{block title}{fg=white, bg=#1}
-        \setbeamercolor{block body}{fg=white, bg=#1}
     }
 }
 \footlinecolor{} % default: no footline
 
 % block
 \setbeamertemplate{blocks}[rounded]
+\setbeamerfont{block title}{series=\centering, size=\small}
+\setbeamerfont{block body}{size=\scriptsize}
+\setbeamercolor{block title}{fg=white, bg=maincolor}
+\setbeamercolor{block body}{fg=darkgray, bg=morelightgray}
 
 % bullets
 \setbeamertemplate{itemize item}{\textbullet}
