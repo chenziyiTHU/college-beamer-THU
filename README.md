@@ -1,7 +1,7 @@
 This is a customized beamer template for THU, based on `college-beamer`. 
 
 - Tsinghua University
-![THU](https://github.com/liu-qilong/college-beamer/blob/main/gallery/THU.png?raw=true)
+![THU](gallery/THU.png)
 
 
 # `college-beamer`
