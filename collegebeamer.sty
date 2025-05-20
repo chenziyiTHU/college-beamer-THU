@@ -30,9 +30,9 @@
 
 % colleges & institutes
 \newcommand{\maincolorRGB}{128, 57, 61}
-\newcommand{\colorlogoPath}{src/PolyU/color-logo.png}
-\newcommand{\translogoPath}{src/PolyU/trans-logo.png}
-\newcommand{\backgroundPath}{src/PolyU/background.png}
+\newcommand{\colorlogoPath}{src/THU/color-logo.png}
+\newcommand{\translogoPath}{src/THU/trans-logo.png}
+\newcommand{\backgroundPath}{src/THU/background.png}
 
 \DeclareOption{polyu}{
     \renewcommand{\maincolorRGB}{128, 57, 61}
@@ -84,6 +84,13 @@
     \renewcommand{\qaStr}{\textbf{全世界无产者，联合起来！}}
 }
 
+\DeclareOption{thu}{
+    \renewcommand{\maincolorRGB}{98, 51, 123}
+    \renewcommand{\colorlogoPath}{src/THU/color-logo.png}
+    \renewcommand{\translogoPath}{src/THU/color-logo.png}
+    \renewcommand{\backgroundPath}{src/THU/background.png}
+}
+
 \ProcessOptions\relax
 
 % --- typeset & elements settings ---
@@ -107,10 +114,14 @@
         \renewcommand{\@makelogo}{translogo}
         \setbeamercolor{normal text}{fg=white, bg=maincolor}
         \setbeamercolor{structure}{fg=white}
+        \setbeamercolor{block title}{fg=maincolor, bg=sintefgrey}
+        \setbeamercolor{block body}{fg=maincolor, bg=sintefgrey}
     }{
         \renewcommand{\@makelogo}{colorlogo}
         \setbeamercolor{normal text}{fg=darkgray, bg=white}
         \setbeamercolor{structure}{fg=maincolor}
+        \setbeamercolor{block title}{fg=airforceblue, bg=morelightgray}
+        \setbeamercolor{block body}{fg=darkgray, bg=morelightgray}
     }
 }
 \themecolor{white} % default: white theme
@@ -125,13 +136,16 @@
 % \renewcommand{\familydefault}{\sfdefault}  % sans-serif
 \usefonttheme{serif}
 
-\setbeamerfont{title}{series=\scshape, size=\Large}
+\setbeamerfont{title}{series=\bfseries\scshape, size=\Large}
 \setbeamerfont{subtitle}{series=\mdseries, size=\normalsize}
 \setbeamerfont{author}{size=\normalsize}
-\setbeamerfont{date}{size=\normalsize}
+\setbeamerfont{date}{size=\small}
 
 \setbeamerfont{frametitle}{series=\bfseries}
-\setbeamerfont{framesubtitle}{series=\mdseries}
+\setbeamerfont{framesubtitle}{series=\mdseries, size=\small}
+\setbeamerfont{block title}{series=\centering, size=\small}
+\setbeamerfont{block body}{size=\scriptsize}
+
 \setbeamerfont{footline}{size=\scriptsize}
 
 % no navigation symbols
@@ -140,8 +154,9 @@
 % footline
 \newcommand{\@footlinepayoff}{\@SINTEFmotto}
 \setbeamertemplate{footline}{
-    \begin{beamercolorbox}[wd=\textwidth, ht=5mm, dp=3mm, rightskip=1cm]{footline}
-    \usebeamerfont{footline}\hfill\@footlinepayoff
+    \begin{beamercolorbox}[wd=\textwidth, ht=5mm, dp=5mm, rightskip=1cm]{footline}
+    \usebeamerfont{footline}
+    \@footlinepayoff \hfill \insertframenumber/\inserttotalframenumber 
     \end{beamercolorbox}
 }
 
@@ -150,19 +165,19 @@
     \ifstrempty{#1}{
         \renewcommand{\@footlinepayoff}{}
         \setbeamercolor{footline}{bg=}
+        \setbeamercolor{block title}{fg=white, bg=maincolor}
+        \setbeamercolor{block body}{fg=white, bg=maincolor}
     }{
         \renewcommand{\@footlinepayoff}{\@SINTEFmotto}
         \setbeamercolor{footline}{fg=white, bg=#1}
+        \setbeamercolor{block title}{fg=white, bg=#1}
+        \setbeamercolor{block body}{fg=white, bg=#1}
     }
 }
 \footlinecolor{} % default: no footline
 
 % block
 \setbeamertemplate{blocks}[rounded]
-\setbeamerfont{block title}{series=\centering, size=\small}
-\setbeamerfont{block body}{size=\scriptsize}
-\setbeamercolor{block title}{fg=airforceblue, bg=morelightgray}
-\setbeamercolor{block body}{fg=darkgray, bg=morelightgray}
 
 % bullets
 \setbeamertemplate{itemize item}{\textbullet}
@@ -172,6 +187,7 @@
 % table of cotents
 \setbeamertemplate{section in toc}{$\blacktriangleright$~\inserttocsection}  % section name format
 \setbeamertemplate{subsection in toc}{}  % don't present subsection
+\setbeamerfont{section in toc}{size=\large}  % section name font size
 
 % code bolck setting
 \definecolor{codegreen}{RGB}{101,218,120}
@@ -243,15 +259,17 @@
 % --- page elements ---
 % frame title & subtitle layout
 \setbeamertemplate{frametitle}{
-    \vspace*{-3.5ex}
+    \vspace*{-4.6ex}
     \begin{beamercolorbox}[leftskip=2cm]{frametitle}
     \usebeamerfont{frametitle}\insertframetitle\\
+    \vskip5pt
     \usebeamerfont{framesubtitle}\insertframesubtitle
     \end{beamercolorbox}
 }
 
 % title page
 \setbeamertemplate{title page}{
+    \vspace{1.5cm}
     \hspace{-12mm}  % pull back the box in an inelegant way - but it works!
     \begin{beamercolorbox}[wd=0.9\textwidth, sep=10pt, leftskip=8mm]{title}
         {\usebeamerfont{title}\inserttitle}\\

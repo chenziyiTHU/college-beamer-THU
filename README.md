@@ -1,3 +1,9 @@
+This is a customized beamer template for THU, based on `college-beamer`. 
+
+- Tsinghua University
+![THU](https://github.com/liu-qilong/college-beamer/blob/main/gallery/THU.png?raw=true)
+
+
 # `college-beamer`
 
 Hi👋 Here are some beamer templates which are secondary creations of [SINTEF Presentation](https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx) template. Thanks [Federico Zenith](federico.zenith@sintef.no) for creating such well-designed works. To use it in my and my friends' schools/institutes, I rewrote and added some icons and features to adapt to specific surroundings✨.
