@@ -101,6 +101,8 @@
 \definecolor{maincolor}{RGB}{\maincolorRGB}
 \definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
 \definecolor{morelightgray}{rgb}{0.9, 0.9, 0.9}
+\definecolor{darkred}{RGB}{139,0,0}
+\definecolor{darkblue}{RGB}{0,51,102}
 
 \newcommand{\themecolor}[1]{
     \ifstrequal{#1}{colorbg}{
@@ -164,6 +166,18 @@
 \setbeamerfont{block body}{size=\scriptsize}
 \setbeamercolor{block title}{fg=white, bg=maincolor}
 \setbeamercolor{block body}{fg=darkgray, bg=morelightgray}
+
+% alerted block
+\setbeamerfont{block title alerted}{size=\small, series=\bfseries}
+\setbeamerfont{block body alerted}{size=\scriptsize}
+\setbeamercolor{block title alerted}{fg=white, bg=darkred}
+\setbeamercolor{block body alerted}{fg=black, bg=darkred!10}
+
+% example block
+\setbeamerfont{block title example}{size=\small}
+\setbeamerfont{block body example}{size=\scriptsize}
+\setbeamercolor{block title example}{fg=white, bg=darkblue}
+\setbeamercolor{block body example}{fg=black, bg=darkblue!10}
 
 % bullets
 \setbeamertemplate{itemize item}{\textbullet}
